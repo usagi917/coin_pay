@@ -1,0 +1,123 @@
+.button {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 28px;
+  font-size: 1.0625rem;
+  font-weight: 510;
+  cursor: pointer;
+  transition:
+    transform 220ms var(--transition-smooth),
+    box-shadow 280ms var(--transition-smooth),
+    background 280ms var(--transition-smooth),
+    opacity 200ms var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  letter-spacing: -0.012em;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.25) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 280ms var(--transition-smooth);
+  pointer-events: none;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(0, 122, 255, 0.4);
+  outline-offset: 4px;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.primary {
+  background: var(--color-accent);
+  color: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 122, 255, 0.25);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 122, 255, 0.32);
+}
+
+.primary:disabled {
+  background: rgba(0, 122, 255, 0.5);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-foreground);
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-accent);
+  border: 0.5px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  border-color: rgba(0, 122, 255, 0.2);
+  background: rgba(0, 122, 255, 0.06);
+}
+
+.ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+    min-width: 200px;
+    padding: 13px 32px;
+  }
+}

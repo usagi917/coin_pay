@@ -1,0 +1,92 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: clamp(32px, 5vw, 48px);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 255, 0.92) 0%,
+    rgba(0, 81, 213, 0.96) 100%
+  );
+  color: #ffffff;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 12px 36px rgba(0, 122, 255, 0.32);
+  display: grid;
+  gap: 16px;
+  transition: transform 320ms var(--transition-smooth);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.18) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 85% 15%,
+    rgba(255, 255, 255, 0.22),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-3%, -3%);
+  }
+}
+
+.label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.amount {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 590;
+  letter-spacing: -0.032em;
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.symbol {
+  font-size: 1.0625rem;
+  opacity: 0.92;
+  position: relative;
+  z-index: 1;
+  font-weight: 510;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}

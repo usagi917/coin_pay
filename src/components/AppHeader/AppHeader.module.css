@@ -1,0 +1,85 @@
+.header {
+  width: min(1120px, 100%);
+  margin: clamp(20px, 3.5vh, 40px) auto 0;
+  padding: clamp(20px, 3.5vw, 32px);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.88);
+  border: 0.5px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: box-shadow 280ms var(--transition-smooth);
+}
+
+.header:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 590;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 122, 255, 0.25);
+  transition:
+    transform 200ms var(--transition-smooth),
+    box-shadow 200ms var(--transition-smooth);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 122, 255, 0.32);
+}
+
+.badgeSecondary {
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--color-accent);
+  border: 0.5px solid rgba(0, 122, 255, 0.2);
+  box-shadow: none;
+}
+
+.badgeSecondary:hover {
+  background: rgba(0, 122, 255, 0.14);
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.12);
+}
+
+.notice {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  letter-spacing: -0.008em;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .badges {
+    gap: 14px;
+  }
+}

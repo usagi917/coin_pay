@@ -1,0 +1,110 @@
+.container {
+  width: min(920px, 100%);
+  display: grid;
+  gap: clamp(32px, 5vw, 56px);
+  margin: 0 auto;
+  padding-bottom: clamp(56px, 10vh, 96px);
+}
+
+.topRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--color-foreground);
+  letter-spacing: -0.022em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.connectControls {
+  display: flex;
+  width: 100%;
+  max-width: 280px;
+}
+
+.connectionStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.connectionIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-success);
+  box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.12);
+}
+
+.connectError {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-error);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 24px);
+  padding: clamp(28px, 4vw, 36px);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: box-shadow 320ms var(--transition-smooth);
+}
+
+.section:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 590;
+  color: var(--color-foreground);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.actions {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: clamp(40px, 5vw, 64px);
+  }
+
+  .connectControls {
+    width: auto;
+  }
+
+  .actions {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

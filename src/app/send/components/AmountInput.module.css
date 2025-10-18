@@ -1,0 +1,177 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.label {
+  font-size: 1.0625rem;
+  font-weight: 590;
+  color: var(--color-foreground);
+  letter-spacing: -0.01em;
+}
+
+.balanceHint {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  letter-spacing: -0.006em;
+}
+
+.displayWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.displayBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    border-color 240ms var(--transition-smooth),
+    box-shadow 240ms var(--transition-smooth);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.displayBox:focus-within {
+  border-color: rgba(0, 122, 255, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(0, 122, 255, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.displayBoxError {
+  border-color: rgba(255, 59, 48, 0.6);
+  box-shadow:
+    0 0 0 3px rgba(255, 59, 48, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.symbol {
+  font-size: 1.0625rem;
+  font-weight: 590;
+  color: var(--color-muted);
+  letter-spacing: -0.01em;
+}
+
+.input {
+  width: 100%;
+  text-align: right;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 590;
+  border: none;
+  background: transparent;
+  color: var(--color-foreground);
+  font-family:
+    ui-monospace, "SF Mono", Menlo, var(--font-geist-mono), Consolas, monospace;
+  letter-spacing: -0.02em;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(29, 29, 31, 0.28);
+}
+
+.allButton {
+  align-self: flex-end;
+  font-size: 0.875rem;
+  border: none;
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 590;
+  cursor: pointer;
+  transition:
+    background 200ms var(--transition-smooth),
+    transform 180ms var(--transition-smooth);
+  letter-spacing: -0.008em;
+}
+
+.allButton:hover {
+  background: rgba(0, 122, 255, 0.16);
+  transform: scale(1.02);
+}
+
+.allButton:active {
+  transform: scale(0.98);
+}
+
+.allButton:focus-visible {
+  outline: 3px solid rgba(0, 122, 255, 0.3);
+  outline-offset: 2px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.keypadButton {
+  padding: 18px 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background: rgba(29, 29, 31, 0.04);
+  font-size: 1.25rem;
+  font-weight: 510;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition:
+    transform 160ms var(--transition-smooth),
+    background 160ms var(--transition-smooth);
+  letter-spacing: -0.015em;
+}
+
+.keypadButton:hover {
+  background: rgba(29, 29, 31, 0.08);
+}
+
+.keypadButton:focus-visible {
+  outline: 3px solid rgba(0, 122, 255, 0.25);
+  outline-offset: 2px;
+}
+
+.keypadButton:active {
+  transform: scale(0.96);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.messageError {
+  color: var(--color-error);
+}
+
+.messageInfo {
+  color: var(--color-muted);
+}
+
+.statusLine {
+  font-size: 0.875rem;
+  color: rgba(29, 29, 31, 0.48);
+  letter-spacing: -0.006em;
+}

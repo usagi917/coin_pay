@@ -1,0 +1,209 @@
+.container {
+  width: min(920px, 100%);
+  display: grid;
+  gap: clamp(28px, 4.5vw, 52px);
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  gap: 12px;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  font-weight: 600;
+  color: var(--color-foreground);
+  letter-spacing: -0.022em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.description {
+  font-size: 1.0625rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: -0.008em;
+}
+
+.feedback {
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 0.5px solid transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+  font-weight: 500;
+  animation: slideIn 280ms var(--transition-smooth);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedbackSuccess {
+  background: rgba(52, 199, 89, 0.1);
+  color: var(--color-success);
+  border-color: rgba(52, 199, 89, 0.25);
+}
+
+.feedbackError {
+  background: rgba(255, 59, 48, 0.1);
+  color: var(--color-error);
+  border-color: rgba(255, 59, 48, 0.25);
+}
+
+.section {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 0.5px solid var(--color-border);
+  padding: clamp(28px, 4vw, 36px);
+  display: grid;
+  gap: clamp(20px, 3.5vw, 32px);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: box-shadow 280ms var(--transition-smooth);
+}
+
+.section:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 6px;
+}
+
+.sectionTitle {
+  font-size: 1.375rem;
+  font-weight: 590;
+  color: var(--color-foreground);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.sectionLabel {
+  font-size: 1.125rem;
+  font-weight: 590;
+  color: var(--color-foreground);
+  letter-spacing: -0.012em;
+  margin: 0;
+}
+
+.sectionHint {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+  letter-spacing: -0.006em;
+}
+
+.sectionBody {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin: 0;
+  letter-spacing: -0.006em;
+}
+
+.addressBox {
+  background: rgba(0, 122, 255, 0.05);
+  border: 1px dashed rgba(0, 122, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: grid;
+  gap: 12px;
+  transition: border-color 240ms var(--transition-smooth);
+}
+
+.addressBox:hover {
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.addressValue {
+  font-family:
+    ui-monospace, "SF Mono", Menlo, var(--font-geist-mono), Consolas, monospace;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: var(--color-foreground);
+}
+
+.addressFull {
+  font-family:
+    ui-monospace, "SF Mono", Menlo, var(--font-geist-mono), Consolas, monospace;
+  font-size: 0.875rem;
+  color: rgba(29, 29, 31, 0.56);
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+.inlineActions {
+  display: grid;
+  gap: 14px;
+}
+
+.linkBox {
+  display: grid;
+  gap: 16px;
+}
+
+.linkCode {
+  display: block;
+  font-family:
+    ui-monospace, "SF Mono", Menlo, var(--font-geist-mono), Consolas, monospace;
+  font-size: 0.875rem;
+  background: rgba(29, 29, 31, 0.04);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  word-break: break-all;
+  border: 0.5px solid rgba(29, 29, 31, 0.08);
+  line-height: 1.6;
+  color: var(--color-foreground);
+}
+
+.qrFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.95)
+  );
+  border-radius: var(--radius-xl);
+  border: 0.5px solid var(--color-border);
+  padding: clamp(24px, 4vw, 32px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.qrImage {
+  width: clamp(240px, 38vw, 300px);
+  height: clamp(240px, 38vw, 300px);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: clamp(36px, 5.5vw, 64px);
+  }
+
+  .inlineActions {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+  }
+}

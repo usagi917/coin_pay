@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.label {
+  font-size: 1.0625rem;
+  font-weight: 590;
+  color: var(--color-foreground);
+  letter-spacing: -0.01em;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  letter-spacing: -0.006em;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 18px 20px;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-foreground);
+  font-family:
+    ui-monospace, "SF Mono", Menlo, var(--font-geist-mono), Consolas, monospace;
+  transition:
+    border-color 240ms var(--transition-smooth),
+    box-shadow 240ms var(--transition-smooth);
+  letter-spacing: -0.008em;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.input::placeholder {
+  color: rgba(29, 29, 31, 0.32);
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(0, 122, 255, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(0, 122, 255, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.inputInvalid {
+  border-color: rgba(255, 59, 48, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(255, 59, 48, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.inputValid {
+  border-color: rgba(52, 199, 89, 0.4);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.message {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+}
+
+.messageError {
+  color: var(--color-error);
+}
+
+.messageWarning {
+  color: var(--color-warning);
+}
+
+.messageInfo {
+  color: var(--color-muted);
+}
+
+.messageSuccess {
+  color: var(--color-success);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  background: rgba(0, 122, 255, 0.08);
+  color: var(--color-accent);
+  border: 0.5px solid rgba(0, 122, 255, 0.2);
+  font-weight: 500;
+  letter-spacing: -0.008em;
+}
